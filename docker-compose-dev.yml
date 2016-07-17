@@ -1,0 +1,62 @@
+version: '2'
+services:
+  config:
+    image: garystafford/config-server:latest
+    ports:
+      - "8888:8888"
+    hostname: "config"
+    container_name: "config"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+
+  eureka:
+    image: garystafford/eureka-server:latest
+    ports:
+      - "8761:8761"
+    depends_on:
+      - config
+    hostname: "eureka"
+    container_name: "eureka"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    volumes:
+      - /data:/data/db
+    restart: always
+    hostname: "mongodb"
+    container_name: "mongodb"
+    command: --smallfiles --rest --auth
+
+  widget:
+    image: garystafford/widget-service:latest
+    ports:
+      - "3030:3030"
+    depends_on:
+      - config
+      - eureka
+      - mongodb
+    hostname: "widget"
+    container_name: "widget"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+
+  user:
+    image: garystafford/user-service:latest
+    ports:
+      - "3031:3031"
+    depends_on:
+      - config
+      - eureka
+      - mongodb
+    hostname: "user"
+    container_name: "user"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+
+volumes:
+  data:
+    # external: true
