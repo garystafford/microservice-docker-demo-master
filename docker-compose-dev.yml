@@ -41,7 +41,7 @@ services:
   widget:
     image: garystafford/widget-service:latest
     ports:
-      - "3030:3030"
+      - "8030:8030"
     depends_on:
       - config
       - eureka
@@ -58,7 +58,7 @@ services:
   user:
     image: garystafford/user-service:latest
     ports:
-      - "3031:3031"
+      - "8031:8031"
     depends_on:
       - config
       - eureka
