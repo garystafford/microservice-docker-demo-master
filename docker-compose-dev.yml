@@ -4,8 +4,8 @@ services:
     image: garystafford/config-server:latest
     ports:
       - "8888:8888"
-    expose:
-      - "8888"
+    # expose:
+    #   - "8888"
     hostname: "config"
     container_name: "config"
     environment:
@@ -15,12 +15,12 @@ services:
     image: garystafford/eureka-server:latest
     ports:
       - "8761:8761"
-    expose:
-      - "8761"
+    # expose:
+    #   - "8761"
     depends_on:
       - config
-    links:
-      - config
+    # links:
+    #   - config
     hostname: "eureka"
     container_name: "eureka"
     environment:
@@ -46,9 +46,9 @@ services:
       - config
       - eureka
       - mongodb
-    links:
-      - config
-      - eureka
+    # links:
+    #   - config
+    #   - eureka
     hostname: "widget"
     container_name: "widget"
     environment:
@@ -63,9 +63,9 @@ services:
       - config
       - eureka
       - mongodb
-    links:
-      - config
-      - eureka
+    # links:
+    #   - config
+    #   - eureka
     hostname: "user"
     container_name: "user"
     environment:

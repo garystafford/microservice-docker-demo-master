@@ -21,4 +21,5 @@ docker-compose -f docker-compose-dev.yml -p widget up -d config; docker logs --f
 docker-compose -f docker-compose-dev.yml -p widget up -d eureka; docker logs --follow eureka
 docker-compose -f docker-compose-dev.yml -p widget up -d widget user; docker logs --follow widget
 docker logs --follow widget
+docker exec -it widget /bin/sh
 ```
