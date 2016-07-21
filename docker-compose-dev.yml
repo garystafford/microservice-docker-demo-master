@@ -4,8 +4,8 @@ services:
     image: garystafford/config-server:latest
     ports:
       - "8888:8888"
-    # expose:
-    #   - "8888"
+    expose:
+      - "8888"
     hostname: "config"
     container_name: "config"
     environment:
@@ -19,8 +19,8 @@ services:
     #   - "8761"
     depends_on:
       - config
-    # links:
-    #   - config
+    links:
+      - config
     hostname: "eureka"
     container_name: "eureka"
     environment:
