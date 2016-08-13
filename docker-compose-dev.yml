@@ -72,6 +72,18 @@ services:
       - SPRING_PROFILES_ACTIVE=development
       - CONFIG_SERVER_URL=http://config:8888
 
+  elk:
+    image: sebp/elk:latest
+    ports:
+    - 5601:5601
+    - 9200:9200
+    - 5044:5044
+    - 5000:5000
+    # networks:
+    # - net
+    hostname: elk
+    container_name: elk
+
 volumes:
   data:
     # external: true
