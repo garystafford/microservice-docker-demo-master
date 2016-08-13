@@ -5,41 +5,23 @@ root="/Users/gstaffo/Documents/projects/widget-docker-demo"
 
 comment="Refactoring configuration, README"
 
-cd ${root}/widget-master && \
-git add -A && \
-git commit -m "${comment}" && \
-git push && \
-git status
+repos=(
+  widget-master
+  config-server
+  config-server-repo
+  eureka-server
+  widget-service
+  user-service
+)
 
-cd ${root}/config-server && \
-git add -A && \
-git commit -m "${comment}" && \
-git push && \
-git status
-
-cd ${root}/config-server-repo && \
-git add -A && \
-git commit -m "${comment}" && \
-git push && \
-git status
-
-cd ${root}/eureka-server && \
-git add -A && \
-git commit -m "${comment}" && \
-git push && \
-git status
-
-cd ${root}/widget-service && \
-git add -A && \
-git commit -m "${comment}" && \
-git push && \
-git status
-
-cd ${root}/user-service && \
-git add -A && \
-git commit -m "${comment}" && \
-git push && \
-git status
+for repo in "${repos[@]}"
+do
+  cd ${root}/${repo} && \
+  git add -A && \
+  git commit -m "${comment}" && \
+  git push && \
+  git status
+done
 
 cd ../widget-master/
 ```
