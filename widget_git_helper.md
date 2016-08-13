@@ -1,10 +1,7 @@
-lazy git add, commit, push all widget projects
+Lazy git add, commit, push all widget projects
 
 ```bash
 root="/Users/gstaffo/Documents/projects/widget-docker-demo"
-
-comment="Refactoring configuration, README"
-
 repos=(
   widget-master
   config-server
@@ -13,6 +10,7 @@ repos=(
   widget-service
   user-service
 )
+comment="Refactoring configuration, README"
 
 for repo in "${repos[@]}"
 do
