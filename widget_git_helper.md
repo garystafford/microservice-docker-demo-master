@@ -1,4 +1,4 @@
-Lazy git add, commit, push all widget projects
+## Lazy git Add, Commit, Push all Widget Projects
 
 ```bash
 root="/Users/gstaffo/Documents/projects/widget-docker-demo"
