@@ -10,7 +10,7 @@ repos=(
   widget-service
   user-service
 )
-comment="Refactoring configuration, README"
+comment="Adding Docker Hub build"
 
 for repo in "${repos[@]}"
 do
