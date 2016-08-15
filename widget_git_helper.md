@@ -6,6 +6,7 @@ repos=(
   widget-master
   config-server
   config-server-repo
+  consul-docker
   eureka-server
   widget-service
   user-service
