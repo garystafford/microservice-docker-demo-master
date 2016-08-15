@@ -10,7 +10,7 @@ repos=(
   widget-service
   user-service
 )
-comment="Adding Docker Hub build"
+comment="Fixing filebeat install in Dckerfiles"
 
 for repo in "${repos[@]}"
 do
