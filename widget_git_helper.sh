@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# usage: sh widget_git_helper.sh "Refactoring code"
+
+args=("$@")
+
 root="/Users/gstaffo/Documents/projects/widget-docker-demo"
 repos=(
   widget-master
@@ -10,7 +14,13 @@ repos=(
   widget-service
   user-service
 )
-comment="Fixing filebeat install in Dckerfiles"
+if [ -n "${args[0]}" ]; then
+    comment=${args[0]}
+else
+    comment="Changes to project..."
+fi
+
+echo ${comment}
 
 for repo in "${repos[@]}"
 do
