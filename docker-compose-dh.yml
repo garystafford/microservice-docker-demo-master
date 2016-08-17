@@ -1,0 +1,74 @@
+version: '2'
+services:
+  config:
+    image: garystafford/microservice-docker-demo-config-server:latest
+    ports:
+      - "8888:8888"
+    hostname: "config"
+    container_name: "config"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+
+  eureka:
+    image: garystafford/microservice-docker-demo-eureka-server:latest
+    ports:
+      - "8761:8761"
+    depends_on:
+      - config
+    hostname: "eureka"
+    container_name: "eureka"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+      - CONFIG_SERVER_URL=http://config:8888
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    volumes:
+      - /data:/data/db
+    restart: always
+    hostname: "mongodb"
+    container_name: "mongodb"
+    command: --smallfiles --rest --auth
+
+  widget:
+    image: garystafford/microservice-docker-demo-widget:latest
+    ports:
+      - "8030:8030"
+    depends_on:
+      - config
+      - eureka
+      - mongodb
+    hostname: "widget"
+    container_name: "widget"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+      - CONFIG_SERVER_URL=http://config:8888
+
+  user:
+    image: garystafford/microservice-docker-demo-user:latest
+    ports:
+      - "8031:8031"
+    depends_on:
+      - config
+      - eureka
+      - mongodb
+    hostname: "user"
+    container_name: "user"
+    environment:
+      - SPRING_PROFILES_ACTIVE=development
+      - CONFIG_SERVER_URL=http://config:8888
+
+  elk:
+    image: sebp/elk:latest
+    ports:
+    - 5601:5601
+    - 9200:9200
+    - 5044:5044
+    - 5000:5000
+    hostname: elk
+    container_name: elk
+
+volumes:
+  data: {}
