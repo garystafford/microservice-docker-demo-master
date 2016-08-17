@@ -1,4 +1,4 @@
-# microservice-docker-demo-master
+# Microservice Demo Master Files
 
 #### Introduction
 One of a set of Java Spring Boot services, for an upcoming post on scaling Spring Boot microservices with the latest Spring and Docker features.
@@ -27,6 +27,7 @@ docker-compose -f docker-compose.yml -p widget up -d mongodb; docker logs --foll
 docker-compose -f docker-compose.yml -p widget up -d widget user; docker logs --follow widget
 docker logs --follow user
 ```
+
 Uses images built directly on Docker Hub from `Dockerfile_dh` files
 ```bash
 docker-compose -f docker-compose-dh.yml -p widget up -d elk; docker logs --follow elk
@@ -35,6 +36,14 @@ docker-compose -f docker-compose-dh.yml -p widget up -d eureka; docker logs --fo
 docker-compose -f docker-compose-dh.yml -p widget up -d mongodb; docker logs --follow mongodb
 docker-compose -f docker-compose-dh.yml -p widget up -d widget user; docker logs --follow widget
 docker logs --follow user
+```
+
+Pull the latest images from Docker Hub
+```bash
+docker pull garystafford/microservice-docker-demo-widget && \
+docker pull garystafford/microservice-docker-demo-user && \
+docker pull garystafford/microservice-docker-demo-eureka-server && \
+docker pull garystafford/microservice-docker-demo-config-server
 ```
 
 #### Links
