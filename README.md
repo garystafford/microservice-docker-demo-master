@@ -40,10 +40,10 @@ docker logs --follow user
 
 Pull the latest images from Docker Hub
 ```bash
-docker pull garystafford/microservice-docker-demo-widget && \
-docker pull garystafford/microservice-docker-demo-user && \
 docker pull garystafford/microservice-docker-demo-eureka-server && \
-docker pull garystafford/microservice-docker-demo-config-server
+docker pull garystafford/microservice-docker-demo-config-server && \
+docker pull garystafford/microservice-docker-demo-widget && \
+docker pull garystafford/microservice-docker-demo-user
 ```
 
 #### Links
