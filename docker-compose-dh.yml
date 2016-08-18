@@ -26,11 +26,12 @@ services:
     ports:
       - "27018:27017"
     volumes:
-      - /data:/data/db
+      - data:/data/db
+      - data:/data/configdb
     restart: always
     hostname: "mongodb"
     container_name: "mongodb"
-    command: --smallfiles --rest --auth
+    command: --smallfiles
 
   widget:
     image: garystafford/microservice-docker-demo-widget:latest
