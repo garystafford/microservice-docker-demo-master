@@ -4,6 +4,7 @@ services:
     image: garystafford/microservice-docker-demo-config-server:latest
     ports:
       - "8888:8888"
+    restart: always
     hostname: "config"
     container_name: "config"
     environment:
