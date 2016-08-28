@@ -26,13 +26,12 @@ Pull the latest images from Docker Hub
 docker pull garystafford/microservice-docker-demo-eureka-server:latest && \
 docker pull garystafford/microservice-docker-demo-config-server:latest && \
 docker pull garystafford/microservice-docker-demo-widget:latest && \
-docker pull garystafford/microservice-docker-demo-user:latest && \
-docker rmi $(docker images | grep "<none>") # clean up un-tagged images
+docker pull garystafford/microservice-docker-demo-user:latest
 ```
 
 Uses images built directly on Docker Hub from `Dockerfile_dh` files
 ```bash
-docker-compose -f docker-compose-dh.yml -p widget up -d elk; docker logs --follow elk
+docker-compose -f docker-compose-dh.yml -p widget up -d elk; docker logs --follow elk # ^C to exit
 docker-compose -f docker-compose-dh.yml -p widget up -d config; docker logs --follow config
 docker-compose -f docker-compose-dh.yml -p widget up -d eureka; docker logs --follow eureka
 docker-compose -f docker-compose-dh.yml -p widget up -d mongodb; docker logs --follow mongodb
