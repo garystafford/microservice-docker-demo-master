@@ -56,3 +56,4 @@ docker logs --follow user
 * [https://docs.gradle.org/current/userguide/gradle_command_line.html](https://docs.gradle.org/current/userguide/gradle_command_line.html)
 * [https://github.com/spujadas/elk-docker/blob/master/nginx-filebeat/filebeat.yml](https://github.com/spujadas/elk-docker/blob/master/nginx-filebeat/filebeat.yml)
 * [http://elk-docker.readthedocs.io/](http://elk-docker.readthedocs.io/)
+* [https://www.elastic.co/guide/en/beats/filebeat/1.2/filebeat-template.html](https://www.elastic.co/guide/en/beats/filebeat/1.2/filebeat-template.html)
