@@ -27,6 +27,8 @@ docker pull garystafford/microservice-docker-demo-eureka-server:latest && \
 docker pull garystafford/microservice-docker-demo-config-server:latest && \
 docker pull garystafford/microservice-docker-demo-widget:latest && \
 docker pull garystafford/microservice-docker-demo-user:latest
+
+docker rmi $(docker images | grep "<none>")
 ```
 
 Uses images built directly on Docker Hub from `Dockerfile_dh` files
@@ -57,3 +59,4 @@ docker logs --follow user
 * [https://github.com/spujadas/elk-docker/blob/master/nginx-filebeat/filebeat.yml](https://github.com/spujadas/elk-docker/blob/master/nginx-filebeat/filebeat.yml)
 * [http://elk-docker.readthedocs.io/](http://elk-docker.readthedocs.io/)
 * [https://www.elastic.co/guide/en/beats/filebeat/1.2/filebeat-template.html](https://www.elastic.co/guide/en/beats/filebeat/1.2/filebeat-template.html)
+* [https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-options.html#multiline](https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-options.html#multiline)
