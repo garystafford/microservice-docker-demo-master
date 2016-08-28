@@ -23,6 +23,8 @@ docker rm -f user widget eureka config elk mongodb
 
 Pull the latest images from Docker Hub
 ```bash
+docker pull mongo:latest && \
+docker pull sebp/elk:latest && \
 docker pull garystafford/microservice-docker-demo-eureka-server:latest && \
 docker pull garystafford/microservice-docker-demo-config-server:latest && \
 docker pull garystafford/microservice-docker-demo-widget:latest && \
