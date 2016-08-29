@@ -62,3 +62,4 @@ docker logs --follow user
 * [http://elk-docker.readthedocs.io/](http://elk-docker.readthedocs.io/)
 * [https://www.elastic.co/guide/en/beats/filebeat/1.2/filebeat-template.html](https://www.elastic.co/guide/en/beats/filebeat/1.2/filebeat-template.html)
 * [https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-options.html#multiline](https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-options.html#multiline)
+* [http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)
