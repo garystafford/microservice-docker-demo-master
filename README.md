@@ -1,27 +1,24 @@
 # Microservice Demo Master Files
 
 #### Introduction
-One of a set of Java Spring Boot services, for an upcoming post on scaling Spring Boot microservices with the latest Spring and Docker features.
+Master build file repository for a set of Java Spring Boot services, for an upcoming post on scaling microservices with the latest Spring and Docker features.
 
 #### Technologies
 * Java
 * Spring Boot
 * Gradle
 * MongoDB
-* Consul
 * Spring Cloud Config Server (migrating to Consul)
 * Spring Cloud Netflix Eureka
 * Spring Boot with Docker
 
 #### Docker
-Build project containers in require start-up order
-
-Delete existing containers
+Optionally, delete existing containers
 ```bash
 docker rm -f user widget eureka config elk mongodb
 ```
 
-Pull the latest images from Docker Hub
+Optionally, pre-pull the latest images from Docker Hub
 ```bash
 docker pull mongo:latest && \
 docker pull sebp/elk:latest && \
@@ -33,7 +30,8 @@ docker pull garystafford/microservice-docker-demo-user:latest
 docker rmi $(docker images | grep "<none>")
 ```
 
-Uses images built directly on Docker Hub from `Dockerfile_dh` files
+Build project containers in require start-up order, using images built directly on
+Docker Hub from `Dockerfile_dh` files
 ```bash
 docker-compose -f docker-compose-dh.yml -p widget up -d elk; docker logs --follow elk # ^C to exit
 docker-compose -f docker-compose-dh.yml -p widget up -d config; docker logs --follow config
@@ -43,9 +41,9 @@ docker-compose -f docker-compose-dh.yml -p widget up -d widget user; docker logs
 docker logs --follow user
 ```
 
-Uses images built with Spring Boot with Docker and Gradle from `Dockerfile` files
+Alternately, use images built with Spring Boot with Docker and Gradle from `Dockerfile` files
 ```bash
-docker-compose -f docker-compose.yml -p widget up -d elk; docker logs --follow elk
+docker-compose -f docker-compose.yml -p widget up -d elk; docker logs --follow elk # ^C to exit
 docker-compose -f docker-compose.yml -p widget up -d config; docker logs --follow config
 docker-compose -f docker-compose.yml -p widget up -d eureka; docker logs --follow eureka
 docker-compose -f docker-compose.yml -p widget up -d mongodb; docker logs --follow mongodb
