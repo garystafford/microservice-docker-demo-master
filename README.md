@@ -1,7 +1,7 @@
 # Microservice Demo Master Files
 
 #### Introduction
-Master build file repository for a set of Java Spring Boot services, for an upcoming post on scaling microservices with the latest Spring and Docker features.
+Master build file repository for an upcoming post on scaling microservices with the latest Spring and Docker features.
 
 #### Technologies
 * Java
@@ -11,6 +11,9 @@ Master build file repository for a set of Java Spring Boot services, for an upco
 * Spring Cloud Config Server (migrating to Consul)
 * Spring Cloud Netflix Eureka
 * Spring Boot with Docker
+* The Elastic Stack (Elasticsearch, Kibana, Logstash, and Beats)
+* DockerHub
+* Travis CI
 
 #### Docker
 Optionally, delete existing containers
